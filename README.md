@@ -726,19 +726,6 @@ LEFT ANTI JOIN ref_df ON main_df.user_id = ref_df.user_id
 
 ## 面试要点
 
-### 项目亮点 (STAR 法则)
-
-- **Situation**: 需要构建一个面向大数据场景的 DQ 质量监控系统
-- **Task**: 在 Docker 环境中使用 Spark 实现可配置、可扩展的 DQ 验证框架
-- **Action**: 设计 7 类 18 项检查，使用策略模式 + YAML 配置驱动架构，实现清洗→验证→报告→持久化全链路
-- **Result**: 100 万行数据 37 秒完成全量检测，6 类注入错误全部准确检出
-
-### JD 匹配关键词
-
-`Spark` `Python` `Scala` `ETL` `数据质量` `Hive` `数据仓库` `Flink` `Kafka` `大模型`
-
-完整面试准备材料见：[`reports/interview-pack/`](reports/interview-pack/)
-
 ### 本项目涉及的大数据核心概念
 
 - **分布式计算**：Spark RDD/DataFrame, lazy evaluation, partition, shuffle
