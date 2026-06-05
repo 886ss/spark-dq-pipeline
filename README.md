@@ -1,5 +1,10 @@
 # Scalable Data Quality Validation Pipeline with Apache Spark & Docker
 
+[![GitHub](https://img.shields.io/badge/GitHub-886ss%2Fspark--dq--pipeline-blue?logo=github)](https://github.com/886ss/spark-dq-pipeline)
+[![Docker](https://img.shields.io/badge/Docker-Ready-2496ED?logo=docker)](https://www.docker.com/)
+[![Spark](https://img.shields.io/badge/Spark-3.4.0-E25A1C?logo=apachespark)](https://spark.apache.org/)
+[![License](https://img.shields.io/badge/License-MIT-green)](./LICENSE)
+
 ## Project Goal
 
 A robust, scalable, configurable framework for executing data quality (DQ) checks on large datasets within ETL processes. Uses **Apache Spark** for distributed processing and **Docker** for consistent, portable deployment.
