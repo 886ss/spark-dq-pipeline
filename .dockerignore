@@ -1,0 +1,15 @@
+# .dockerignore
+.git/
+.gitignore
+.vscode/
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
+*.egg-info/
+.env
+data/
+reports/
+.venv/
+venv/
+docker-compose.override.yml

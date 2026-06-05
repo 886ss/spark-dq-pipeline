@@ -1,0 +1,143 @@
+# config/dq_checks_config.yaml
+data_source: "data/synthetic_errors/synthetic_data.parquet"
+
+checks:
+  # --- 1. Completeness Checks ---
+  - check_name: check_user_id_not_null
+    check_type: completeness
+    params:
+      column: "user_id"
+      threshold: 0.0
+  - check_name: check_price_not_null
+    check_type: completeness
+    params:
+      column: "price"
+      threshold: 0.06
+  - check_name: check_quantity_not_null
+    check_type: completeness
+    params:
+      column: "quantity"
+      threshold: 0.06
+
+  # --- 2. Uniqueness Checks ---
+  - check_name: check_user_id_unique
+    check_type: uniqueness
+    params:
+      column: "user_id"
+      threshold: 0.0
+  - check_name: check_transaction_id_unique_post_dedupe
+    check_type: uniqueness
+    params:
+      column: "transaction_id"
+      threshold: 0.001
+
+  # --- 3. Validity Checks ---
+  - check_name: check_price_range_post_clean
+    check_type: validity
+    sub_type: range
+    params:
+      column: "price"
+      min_value: 0.0
+      threshold: 0.001
+  - check_name: check_email_format_post_clean
+    check_type: validity
+    sub_type: regex
+    params:
+      column: "email"
+      pattern: '^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$'
+      threshold: 0.001
+  - check_name: check_country_code_values_post_clean
+    check_type: validity
+    sub_type: categorical
+    params:
+      column: "country_code"
+      allowed_values: ["US", "CA", "MX", "GB", "DE", "FR", "UNKNOWN"]
+      threshold: 0.001
+  - check_name: check_order_status_values_post_clean
+    check_type: validity
+    sub_type: categorical
+    params:
+      column: "order_status"
+      allowed_values: ["COMPLETED", "PENDING", "CANCELLED", "FAILED", "UNKNOWN"]
+      threshold: 0.001
+
+  # --- 4. Consistency Checks ---
+  - check_name: check_end_date_after_start_date_final
+    check_type: consistency
+    params:
+      condition_sql: "end_date >= start_date"
+      threshold: 0.12
+
+  # --- 5. Format Checks ---
+  - check_name: check_product_id_length
+    check_type: format
+    sub_type: string_length
+    params:
+      column: "product_id"
+      fixed_length: 4
+      threshold: 0.01
+  - check_name: check_country_code_length_post_clean
+    check_type: format
+    sub_type: string_length
+    params:
+      column: "country_code"
+      min_length: 2
+      max_length: 7
+      threshold: 0.001
+  - check_name: check_user_id_data_type
+    check_type: format
+    sub_type: data_type
+    params:
+      column: "user_id"
+      expected_spark_type_str: "bigint"
+      threshold: 0.0
+  - check_name: check_price_data_type_post_clean
+    check_type: format
+    sub_type: data_type
+    params:
+      column: "price"
+      expected_spark_type_str: "double"
+      threshold: 0.0
+  - check_name: check_start_date_data_type
+    check_type: format
+    sub_type: data_type
+    params:
+      column: "start_date"
+      expected_spark_type_str: "timestamp"
+      threshold: 0.0
+  - check_name: check_dates_marked_inconsistent_data_type
+    check_type: format
+    sub_type: data_type
+    params:
+      column: "dates_marked_inconsistent"
+      expected_spark_type_str: "boolean"
+      threshold: 0.0
+
+  # --- 6. Statistical Checks ---
+  - check_name: check_price_mean_deviation
+    check_type: stats
+    sub_type: mean_deviation
+    params:
+      column: "price"
+      expected_mean: 255.0
+      max_deviation_stddevs: 3.0
+
+  # --- 7. Cross-Dataset Checks ---
+  - check_name: check_user_id_exists_in_users_ref
+    check_type: consistency
+    sub_type: referential_integrity
+    params:
+      column: "user_id"
+      reference_data_path: "data/reference/users.parquet"
+      reference_column: "user_id"
+      threshold: 0.03
+
+reporting:
+  output_formats: ["json", "csv"]
+  report_dir: "reports"
+  report_filename_prefix: "dq_report_docker_final_w_adv_checks"
+
+database_logging:
+  enabled: true
+  db_type: postgresql
+  table_name: "dq_results_log"
