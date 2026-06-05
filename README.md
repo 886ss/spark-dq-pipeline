@@ -46,7 +46,7 @@
 | 层级 | 技术 | 版本 | 用途 |
 |------|------|------|------|
 | 分布式计算 | Apache Spark (PySpark) | 3.4.0 | 分布式数据读取、清洗、DQ 检查 |
-| 编程语言 | Python | 3.9 | DQ 检查逻辑、报告生成 |
+| 编程语言 | Python | 3.10 | DQ 检查逻辑、报告生成 |
 | 容器化 | Docker + Docker Compose | latest | 环境一致性、一键部署 |
 | 数据库 | PostgreSQL | 15 | DQ 结果持久化存储 (JSONB 格式) |
 | 配置管理 | YAML | — | DQ 检查项、报告参数声明式配置 |
