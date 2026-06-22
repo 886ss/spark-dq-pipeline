@@ -1,4 +1,4 @@
-# src/utils/db_utils.py
+# 数据库工具：DQ检查结果写入PostgreSQL dq_results_log表(JSONB格式, 事务批量提交, NaN→NULL安全转换, 自动回滚)
 import psycopg2
 import json
 from datetime import datetime
