@@ -1,4 +1,4 @@
-# Dockerfile
+# Docker镜像定义：基于apache/spark-py(v3.4.0 JVM+Python3.9)，安装7个Python依赖，复制src+config到/app
 FROM apache/spark-py:latest
 USER root
 WORKDIR /app
