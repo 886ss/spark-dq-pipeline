@@ -1,4 +1,4 @@
-# src/data_generator.py
+# 合成数据生成器：100万行电商交易数据 + 6类错误注入（NaN空值5% / 负价格1% / 无效邮箱2% / 枚举错误 / 日期交换10% / 重复ID 3%）
 import os
 import pandas as pd
 import numpy as np
