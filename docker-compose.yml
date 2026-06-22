@@ -1,4 +1,4 @@
-# docker-compose.yml
+# 双服务编排：PostgreSQL 15 (dq_db, 健康检查, Volume持久化) + Spark DQ应用 (build ., 配置/数据/报告 Volume挂载, 依赖PG就绪后启动)
 services:
   # --- PostgreSQL Database Service ---
   postgres-db:
