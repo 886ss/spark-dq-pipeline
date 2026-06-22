@@ -1,4 +1,4 @@
-# src/generate_users_data.py
+# 用户参考数据生成器：98.5万行用户记录(user_id/姓名/注册日期)，故意移除2% user_id用于验证参照完整性检查
 import os
 import pandas as pd
 import numpy as np
