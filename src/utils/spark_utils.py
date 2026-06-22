@@ -1,4 +1,4 @@
-# src/utils/spark_utils.py
+# Spark工具：SparkSession工厂方法(local[*], driver 2GB, timeParserPolicy=LEGACY)，提供创建/关闭便捷函数
 from pyspark.sql import SparkSession
 
 def get_spark_session(app_name="DataQualityApp"):
