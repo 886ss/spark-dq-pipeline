@@ -1,4 +1,4 @@
-# src/analyze_failures.py
+# DQ失败分析工具：对已完成检查中FAIL/ERROR的项进行下钻诊断（当前支持价格范围失败分析）
 import os
 import sys
 import traceback
