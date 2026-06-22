@@ -1,4 +1,4 @@
-# src/dq_checks/completeness.py
+# 完整性检查：检测列中NULL/NaN空值占比，支持自定义阈值（Spark NaN≠NULL，需同时用isNull()+isnan()）
 from pyspark.sql import DataFrame
 import pyspark.sql.functions as F
 
