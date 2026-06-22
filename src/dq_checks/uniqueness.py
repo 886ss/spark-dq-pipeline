@@ -1,4 +1,4 @@
-# src/dq_checks/uniqueness.py
+# 唯一性检查：groupBy+count检测列中重复值占比，排除NULL后计算重复行比例
 from pyspark.sql import DataFrame
 import pyspark.sql.functions as F
 
