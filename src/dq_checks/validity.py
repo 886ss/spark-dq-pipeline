@@ -1,4 +1,4 @@
-# src/dq_checks/validity.py
+# 有效性检查：范围校验(min/max边界) + 正则匹配(rlike) + 枚举白名单(isin)，三种子策略统一接口
 from pyspark.sql import DataFrame
 import pyspark.sql.functions as F
 
