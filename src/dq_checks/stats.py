@@ -1,4 +1,4 @@
-# src/dq_checks/stats.py
+# 统计检查：Z-score均值偏离检测——过滤NaN后计算pop stddev，|实际均值-期望均值|/标准差 ≤ 允许偏差
 from pyspark.sql import DataFrame
 import pyspark.sql.functions as F
 from pyspark.sql.types import NumericType
