@@ -1,4 +1,4 @@
-# src/dq_checks/consistency.py
+# 一致性检查：自定义SQL条件(F.expr) + 跨表参照完整性(left_anti join，等价NOT EXISTS，Spark专门优化)
 from pyspark.sql import DataFrame, SparkSession
 import pyspark.sql.functions as F
 import os
