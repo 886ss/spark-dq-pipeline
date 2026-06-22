@@ -1,4 +1,4 @@
-# src/dq_checks/format.py
+# 格式检查：字符串长度约束(fixed/min/max) + 日期格式解析(to_timestamp) + 列数据类型校验(schema[col].dataType)
 from pyspark.sql import DataFrame
 import pyspark.sql.functions as F
 from pyspark.sql.types import StringType
