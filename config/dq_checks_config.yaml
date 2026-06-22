@@ -1,4 +1,4 @@
-# config/dq_checks_config.yaml
+# DQ检查配置：18条检查规则(7大类) + 报告输出(JSON/CSV) + 数据库日志开关(PostgreSQL JSONB) —— 全部声明式，无需改代码
 data_source: "data/synthetic_errors/synthetic_data.parquet"
 
 checks:
