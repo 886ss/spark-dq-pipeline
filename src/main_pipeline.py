@@ -1,4 +1,4 @@
-# src/main_pipeline.py
+# 主流水线编排器：加载YAML配置→初始化Spark→读取Parquet→6步清洗→去重→18项DQ检查→JSON/CSV报告→PostgreSQL持久化
 import os
 import sys
 import yaml
