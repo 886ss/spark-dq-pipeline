@@ -3,7 +3,7 @@
 [![GitHub](https://img.shields.io/badge/GitHub-886ss%2Fspark--dq--pipeline-blue?logo=github)](https://github.com/886ss/spark-dq-pipeline)
 [![Docker](https://img.shields.io/badge/Docker-Ready-2496ED?logo=docker)](https://www.docker.com/)
 [![Spark](https://img.shields.io/badge/Spark-3.4.0-E25A1C?logo=apachespark)](https://spark.apache.org/)
-[![Python](https://img.shields.io/badge/Python-3.9-3776AB?logo=python)](https://www.python.org/)
+[![Python](https://img.shields.io/badge/Python-3.10-3776AB?logo=python)](https://www.python.org/)
 [![PostgreSQL](https://img.shields.io/badge/PostgreSQL-15-4169E1?logo=postgresql)](https://www.postgresql.org/)
 [![License](https://img.shields.io/badge/License-MIT-green)](./LICENSE)
 
